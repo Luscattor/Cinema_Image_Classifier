@@ -7,7 +7,7 @@ from tkinter import filedialog, messagebox, simpledialog
 import shutil
 
 # Charger le modèle entraîné
-model = tf.keras.models.load_model('rank_model.h5', compile=False)
+model = tf.keras.models.load_model('/Users/alexandrelaroumet/Dropbox/PERSO/ALEXANDRE/Script/Ai_Image_Classifier/results/rank_model.h5', compile=False)
 
 def predict_image_rank(img_path):
     # Charger et préparer l'image
