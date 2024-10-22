@@ -240,8 +240,6 @@ class ImageClassifierApp:
         self.root = root
         self.root.title("Image Classifier")
         
-        
-        
         # Default root path
         self.root_path = tk.StringVar()
         self.root_path.set(os.getcwd())
@@ -285,6 +283,19 @@ class ImageClassifierApp:
             btn = tk.Button(self.button_frame, text=btn_text, command=lambda i=i: self.classify_image(i))
             btn.pack(side=tk.LEFT, expand=True, padx=2)
         
+         # Associer les touches du clavier 1-9 et 0 à la fonction classify_image()
+       
+        root.bind('1', lambda event: self.classify_image(1))
+        root.bind('2', lambda event: self.classify_image(2))
+        root.bind('3', lambda event: self.classify_image(3))
+        root.bind('4', lambda event: self.classify_image(4))
+        root.bind('5', lambda event: self.classify_image(5))
+        root.bind('6', lambda event: self.classify_image(6))
+        root.bind('7', lambda event: self.classify_image(7))
+        root.bind('8', lambda event: self.classify_image(8))
+        root.bind('9', lambda event: self.classify_image(9))
+        root.bind('0', lambda event: self.classify_image(10))
+        
         # Navigation and Conflict Buttons Frame (Below Rank Buttons)
         self.nav_frame = tk.Frame(self.viewer_frame)
         self.nav_frame.pack(fill=tk.X, pady=5)
@@ -325,8 +336,6 @@ class ImageClassifierApp:
         # Bind configure event to update image display on resize
         self.root.bind('<Configure>', lambda event: self.update_image_display())
         
-        
-
     def browse_path(self):
             path = filedialog.askdirectory()
             if path:
