@@ -19,7 +19,6 @@ class ImageConflictUI(tk.Toplevel):
         
         # Additional UI elements can be added here
 
-
     def initUI(self):
         # Main Frame
         main_frame = tk.Frame(self)
@@ -241,6 +240,8 @@ class ImageClassifierApp:
         self.root = root
         self.root.title("Image Classifier")
         
+        
+        
         # Default root path
         self.root_path = tk.StringVar()
         self.root_path.set(os.getcwd())
@@ -302,6 +303,8 @@ class ImageClassifierApp:
         self.lower_frame.pack(fill=tk.X, side=tk.BOTTOM, pady=5)
         
         # Path Entry
+        self.browse_path()
+        
         self.path_label = tk.Label(self.lower_frame, text="Path image root:")
         self.path_label.pack(side=tk.LEFT, padx=5)
         
@@ -321,6 +324,8 @@ class ImageClassifierApp:
         
         # Bind configure event to update image display on resize
         self.root.bind('<Configure>', lambda event: self.update_image_display())
+        
+        
 
     def browse_path(self):
             path = filedialog.askdirectory()
@@ -427,5 +432,5 @@ class ImageClassifierApp:
 if __name__ == "__main__":
     root = tk.Tk()
     app = ImageClassifierApp(root)
-    root.geometry("600x200")
+    root.geometry("1000x500")
     root.mainloop()
